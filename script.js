@@ -85,6 +85,10 @@ document.addEventListener('DOMContentLoaded', function() {
        
         // Short funny responses
         {
+            message: "Go and See Outside, Bro! 🙄",
+            image: "https://media.giphy.com/media/3o7TKQ8kAP0f9X5PoY/giphy.gif"
+        },
+        {
             message: "Just look outside, duh! 🙄",
             image: "https://media.giphy.com/media/3o7TKQ8kAP0f9X5PoY/giphy.gif"
         },
@@ -100,22 +104,6 @@ document.addEventListener('DOMContentLoaded', function() {
             message: "Turn around. See window? 🪟",
             image: "https://media.giphy.com/media/3oriO0OEd9QIDdllqo/giphy.gif"
         },
-        {
-            message: "Google 'what are windows' 🤦‍♂️",
-            image: "https://media.giphy.com/media/WrNfErHio7ZAc/giphy.gif"
-        },
-        {
-            message: "Nice weather app... NOT! 😎",
-            image: "https://media.giphy.com/media/kDIhIpwRRIi3K/giphy.gif"
-        },
-        {
-            message: "Touch grass. Check weather. ☀️",
-            image: "https://media.giphy.com/media/l4pTfx2qLszoacZRS/giphy.gif"
-        },
-        {
-            message: "Weather.exe has stopped working 💀",
-            image: "https://media.giphy.com/media/j9GASQ5ocrIRicnmyq/giphy.gif"
-        }
     ];
 
     weatherForm.addEventListener('submit', function(e) {
