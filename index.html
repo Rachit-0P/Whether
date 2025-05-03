@@ -3,29 +3,38 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>WeatherNow - Your Reliable Weather Service</title>
+    <title>BeyondWhether - Your Reliable Weather Service</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🌤️</text></svg>">
+    <meta name="description" content="Get the most accurate weather forecasts for any city with BeyondWhether">
+    <meta property="og:title" content="BeyondWhether - Your Weather Service">
+    <meta property="og:description" content="Get accurate weather forecasts at your fingertips!">
+    <meta property="og:image" content="https://source.unsplash.com/random/1200x630/?weather">
+    <meta property="og:type" content="website">
 </head>
 <body>
     <div class="container">
         <header>
-            <h1><i class="fas fa-cloud-sun"></i> WeatherNow</h1>
+            <div class="theme-toggle">
+                <button id="theme-toggle-btn"><i class="fas fa-moon"></i></button>
+            </div>
+            <h1><i class="fas fa-cloud-sun"></i> BeyondWhether</h1>
             <p>Accurate weather forecasts at your fingertips! ✨</p>
         </header>
-        
+
         <main>
             <div class="search-container">
-                <form id="weather-form">
-                    <input type="text" id="city-input" placeholder="Enter your city..." required>
-                    <button type="submit"><i class="fas fa-search"></i> Get Weather</button>
+                <form id="weather-form" aria-label="Weather search form">
+                    <input type="text" id="city-input" placeholder="Enter your city..." required aria-label="Enter city name">
+                    <button type="submit" aria-label="Get weather"><i class="fas fa-search"></i> Get Weather</button>
                 </form>
             </div>
             
-            <div id="loading-section" class="hidden">
+            <div id="loading-section" class="hidden" aria-live="polite">
                 <div class="loading-spinner"></div>
                 <div id="loading-message">Connecting to weather satellites...</div>
                 <div class="progress-bar">
@@ -33,17 +42,37 @@
                 </div>
             </div>
             
-            <div id="weather-result" class="hidden">
+            <div id="weather-result" class="hidden" aria-live="polite">
                 <h2 id="prank-message"></h2>
                 <img id="prank-image" alt="Weather Prank">
-                <button id="try-again"><i class="fas fa-redo"></i> Try Another City</button>
+                <div class="button-group">
+                    <button id="try-again"><i class="fas fa-redo"></i> Try Another City</button>
+                    <button id="share-prank" class="share-btn"><i class="fas fa-share-alt"></i> Share Prank</button>
+                </div>
             </div>
         </main>
         
-        <footer>
-            <p>WeatherNow &copy; 2025 | The most "accurate" weather service 😉</p>
+         <footer>
+            <p>BeyondWhether &copy; 2025 | The most "accurate" weather service 😉</p>
+            <div class="social-links">
+                <a href="https://instagram.com/BeyondRachit" target="_blank" class="instagram-link">
+                    <i class="fab fa-instagram"></i> @BeyondRachit
+                </a>
+            </div>
         </footer>
     </div>
+
+    <div id="welcome-modal" class="modal hidden">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <h2>Welcome to BeyondWhether! 👋</h2>
+            <p>The most "accurate" weather service you'll ever use!</p>
+            <p>Enter your city and discover what the weather is like right now.</p>
+            <button id="start-button">Get Started</button>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
     <script src="script.js"></script>
 </body>
 </html>
